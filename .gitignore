@@ -1,0 +1,21 @@
+# Ambientes virtuais Python
+.venv/
+venv/
+__pycache__/
+
+# Ficheiros sensíveis (contém API keys / credenciais)
+.htaccess
+
+# Claude Code
+.claude/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Backups
+*.bak
+*.sql

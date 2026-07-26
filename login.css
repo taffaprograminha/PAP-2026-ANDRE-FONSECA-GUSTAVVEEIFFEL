@@ -1,0 +1,248 @@
+/* ════════════════════════════════════════════════════════════════════════
+   Login — Split panel (estilo André Fonseca), acento violeta Swiss.
+   ════════════════════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+:root {
+    --primary: #6E56CF;
+    --primary-dark: #5A43B8;
+    --primary-light: #8B72E8;
+    --error: #C0392B;
+    --bg-1: #e2e2e2;
+    --bg-2: #c9d6ff;
+    --surface: #ffffff;
+    --text: #18181B;
+    --text-muted: #6e6e73;
+    --input-bg: #F4F2EC;
+}
+
+body {
+    background: linear-gradient(to right, var(--bg-1), var(--bg-2));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 24px;
+}
+
+.container {
+    background-color: var(--surface);
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    position: relative;
+    overflow: hidden;
+    width: 768px;
+    max-width: 100%;
+    min-height: 480px;
+    display: flex;
+}
+
+/* ── Lado esquerdo: formulário ─────────────────────────────────────────── */
+.form-container {
+    width: 50%;
+    height: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 40px;
+}
+
+.form-container form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-container h1 {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 4px;
+    letter-spacing: -0.4px;
+}
+
+.form-container h1::after {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 3px;
+    background: var(--primary);
+    border-radius: 2px;
+    margin: 10px auto 18px;
+}
+
+.form-container span {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 14px;
+}
+
+.form-container input {
+    background-color: var(--input-bg);
+    border: 1px solid transparent;
+    margin: 6px 0;
+    padding: 11px 15px;
+    font-size: 13px;
+    border-radius: 8px;
+    width: 100%;
+    outline: none;
+    color: var(--text);
+    transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.form-container input::placeholder { color: #9A978D; }
+
+.form-container input:focus {
+    border-color: var(--primary);
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(110, 86, 207, 0.12);
+}
+
+.form-container input:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+.form-container a {
+    color: var(--text-muted);
+    font-size: 13px;
+    text-decoration: none;
+    margin: 14px 0 6px;
+    transition: color 0.15s ease;
+}
+
+.form-container a:hover { color: var(--primary); }
+
+.form-container button {
+    background-color: var(--primary);
+    color: #fff;
+    font-size: 12px;
+    padding: 11px 45px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 12px;
+    cursor: pointer;
+    transition: background 0.15s ease;
+    position: relative;
+}
+
+.form-container button:hover:not(:disabled) { background-color: var(--primary-dark); }
+
+.form-container button:disabled {
+    background-color: #9A978D;
+    cursor: not-allowed;
+}
+
+/* ── Lado direito: painel violeta ──────────────────────────────────────── */
+.toggle-container {
+    width: 50%;
+    height: 480px;
+    overflow: hidden;
+    border-radius: 150px 0 0 100px;
+}
+
+.toggle {
+    background: linear-gradient(to right, #5c6bc0, var(--primary));
+    color: #fff;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 32px;
+    text-align: center;
+}
+
+.toggle h1 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+    margin-bottom: 14px;
+}
+
+.toggle p {
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0.3px;
+    margin-bottom: 24px;
+    opacity: 0.92;
+    max-width: 280px;
+}
+
+.toggle .brand-mark {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 22px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+/* ── Mensagem de erro ──────────────────────────────────────────────────── */
+.msg {
+    width: 100%;
+    margin-top: 14px;
+    padding: 10px 14px;
+    background: rgba(192, 57, 43, 0.08);
+    border: 1px solid rgba(192, 57, 43, 0.25);
+    border-radius: 8px;
+    color: var(--error);
+    font-size: 12.5px;
+    text-align: center;
+    font-weight: 500;
+    animation: shake 0.4s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.msg::before { content: '⚠'; font-size: 14px; }
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+/* ── Responsivo ────────────────────────────────────────────────────────── */
+@media (max-width: 720px) {
+    .container {
+        flex-direction: column-reverse;
+        width: 100%;
+        max-width: 420px;
+        min-height: auto;
+    }
+    .form-container,
+    .toggle-container {
+        width: 100%;
+        height: auto;
+    }
+    .toggle-container {
+        border-radius: 0;
+    }
+    .toggle {
+        padding: 32px 24px;
+    }
+    .form-container {
+        padding: 32px 28px;
+    }
+}
